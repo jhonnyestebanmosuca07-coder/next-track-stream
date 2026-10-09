@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --font-title: 'Cinzel', serif;
+  --font-sans: 'Montserrat', sans-serif;
+  --color-gold-300: #FDE68A;
+  --color-gold-400: #F5D77F;
+  --color-gold-500: #D4AF37;
+  --color-gold-600: #B8972E;
+  --color-gold-700: #8C701B;
+  --color-gold-800: #5C470D;
+  --color-gold-900: #3D2F07;
+  --color-surface-darkest: #09090B;
+  --color-surface-sidebar: #0F0F12;
+  --color-surface-card: #15151A;
+  --color-surface-card-hover: #1E1E26;
+  --color-surface-border: #2A2720;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #09090B;
+}
+::-webkit-scrollbar-thumb {
+  background: #2D2716;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFF1B8 0%, #D4AF37 50%, #997A15 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-button {
+  background: linear-gradient(180deg, #F3D279 0%, #D4AF37 50%, #A6831F 100%);
+  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+  transition: all 0.25s ease;
+}
+.gold-button:hover {
+  background: linear-gradient(180deg, #FFF3C4 0%, #E5BE45 50%, #B89324 100%);
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.55);
+  transform: translateY(-1px);
+}
+
+.cassette-rotate {
+  transform: rotate(6deg);
+  transition: transform 0.4s ease;
+}
+.cassette-rotate:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
+@keyframes spinVinyl {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.vinyl-spinning {
+  animation: spinVinyl 12s linear infinite;
+}
+.paused {
+  animation-play-state: paused;
+}
+
+@keyframes pulseBar {
+  0% { height: 4px; }
+  100% { height: 26px; }
+}
+.audio-bar {
+  animation: pulseBar 1.2s ease-in-out infinite alternate;
+}
+
